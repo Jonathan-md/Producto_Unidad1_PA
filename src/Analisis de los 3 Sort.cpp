@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <chrono>
 #include <fstream>
@@ -6,7 +5,6 @@
 #include <string>
 using namespace std;
 
-// INSERTION SORT
 
 void Insercion(int A[], int n, long long &comp, long long &mov) {
     int aux, k;
@@ -31,7 +29,6 @@ void Insercion(int A[], int n, long long &comp, long long &mov) {
     }
 }
 
-// SHELL SORT
 
 void Shell(int A[], int n, long long &comp, long long &mov) {
     int salto, aux, j;
@@ -58,7 +55,6 @@ void Shell(int A[], int n, long long &comp, long long &mov) {
     }
 }
 
-// QUICK SORT - CODE 1
 
 void QuickSort(int A[], int inicio, int fin,
                long long &comp, long long &mov,
@@ -116,7 +112,6 @@ void QuickSort(int A[], int inicio, int fin,
     }
 }
 
-// GENERAR DATOS
 
 void Generar(int A[], int n, int patron, int semilla) {
     srand(semilla);
@@ -147,7 +142,6 @@ void Generar(int A[], int n, int patron, int semilla) {
     }
 }
 
-// PROGRAMA PRINCIPAL
 
 int main() {
     int n;
