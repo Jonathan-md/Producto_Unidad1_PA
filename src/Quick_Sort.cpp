@@ -1,64 +1,53 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int Reduce(int A[],int inicio,int final){
-	int izq,der,pos,cen,aux;
-	izq=inicio;
-	der=final;
-	pos=izq;
-	cen=1;
-	while(cen==1){
-		cen=0;
-		while(A[pos]<=A[der] && pos!=der){
-			der--;
-		}
-		if(pos!=der){
-			aux=A[pos];
-			A[pos]=A[der];
-			A[der]=aux;
-			pos=der;
-			while(A[pos]>=A[izq] && pos!=izq){
-				izq++;
-			}
-			if(pos!=izq){
-				aux=A[pos];
-				A[pos]=A[izq];
-				A[izq]=aux;
-				pos=izq;
-				cen=1;
-			}
-		}
-		if(pos-1>inicio){
-			Reduce(A,inicio,pos-1);
-		}
-		if(pos+1<final){
-			Reduce(A,pos+1,final);
-		}
-	}
-	return 0;
+void QuickSort(int A[], int inicio, int fin) {
+    int i = inicio;
+    int j = fin;
+    int pivote = A[(inicio + fin) / 2];
+
+    while (i <= j) {
+        while (A[i] < pivote) {
+            i++;
+        }
+
+        while (A[j] > pivote) {
+            j--;
+        }
+
+        if (i <= j) {
+            int aux = A[i];
+            A[i] = A[j];
+            A[j] = aux;
+            i++;
+            j--;
+        }
+    }
+
+    if (inicio < j) {
+        QuickSort(A, inicio, j);
+    }
+
+    if (i < fin) {
+        QuickSort(A, i, fin);
+    }
 }
 
-int QuickSort(int A[],int n){
-	return Reduce(A,1,n);
-}
+int main() {
+    int A[100], n;
 
-int main(){
-	int A[90],n;
-	
-	cout<<"Cuantos de numeros va ingresar?: ";
-	cin>>n;
-	cout<<"\nIngrese los numeros a ordenar: "<<endl;
-	for(int i=1;i<=n;i++){
-		cout<<" ";
-		cin>>A[i];
-	}
-	QuickSort(A,n);
-	
-	cout<<"\nNumeros ordenadas: ";
-	for(int i=1;i<=n;i++){
-		cout<<A[i]<<" ";
-	}
-	return 0;
-}
+    cin >> n;
 
+    for (int i = 0; i < n; i++) {
+        cin >> A[i];
+    }
+
+    QuickSort(A, 0, n - 1);
+
+    for (int i = 0; i < n; i++) {
+        cout << A[i] << " ";
+    }
+
+    return 0;
+}
 
