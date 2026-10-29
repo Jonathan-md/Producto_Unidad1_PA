@@ -70,3 +70,7 @@ Los resultados experimentales se almacenan en archivos CSV para facilitar su rev
 ## 8. Reproducibilidad
 
 El proyecto utiliza Git y GitHub para registrar los cambios del código. El hash del commit permite identificar la versión asociada a cada ejecución experimental.
+
+## 9. Video en Youtube
+
+https://youtu.be/rDAMBbFnLko?si=Xe6-Fzco11MeycDE
