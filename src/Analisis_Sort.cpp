@@ -37,7 +37,7 @@ int main() {
 
         cout << "\nPATRON: " << nombres[p] << endl;
 
-        for (int r = 1; r <= 3; r++) {
+        for (int r = 1; r <= 30; r++) {
             int semilla = 12345 + r;
 
             Generar(A, n, p, semilla);
