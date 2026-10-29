@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <fstream>
+#include <iomanip>
 #include <string>
 #include "ordenamientos.h"
 using namespace std;
@@ -30,6 +31,8 @@ int main() {
         ofstream archivo(
             ("resultados_" + nombres[p] + ".csv").c_str()
         );
+        
+        archivo << fixed << setprecision(6);
 
         archivo << "algoritmo,n,patron,repeticion,tiempo_ms,"
                 << "comparaciones,movimientos,profundidad,"
